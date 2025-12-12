@@ -8,6 +8,16 @@ const db = mysql.createConnection({
     password: "12345",
     database: "bookstore"
 })
+app.get("/", (req,res) =>{
+    res.json("Hi. This is the backend")
+})
+app.get("/books",(req,res)=>{
+    const q = "SELECT * FROM books;"
+    db.query(q,(err,data)=>{
+        if(err) {return res.json(err)}
+        return res.json(data)
+     })
+})
 
 app.listen(8800, ()=>{
     console.log("Connected to backend")
