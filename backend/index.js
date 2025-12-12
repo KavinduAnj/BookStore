@@ -18,6 +18,14 @@ app.get("/books",(req,res)=>{
         return res.json(data)
      })
 })
+app.post("/books",(req,res)=>{
+    const q = "INSERT INTO books (`author`,`description`,`cover`) VALUES (?)"
+    const values = ["new author","new desc","new cover"]
+    db.query(q,[values],(err,data)=>{
+        if(err) {return res.json(err)}
+        return res.json("Book has been created")
+     })
+})
 
 app.listen(8800, ()=>{
     console.log("Connected to backend")
