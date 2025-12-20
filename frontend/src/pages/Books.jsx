@@ -7,7 +7,7 @@ const Books = () => {
     const fetchAllBooks = async () => {
     try{
       const res = await axios.get("http://localhost:8800/books");
-      console.log(res);
+      setBooks(res.data);
 
     }catch(err){
       console.log(err);
@@ -18,6 +18,15 @@ const Books = () => {
   return (
     <div>
       <h1>Books</h1>
+      <div className="books">
+        {books.map(book=>(
+          <div className="book" key = {book.id}>
+            {book.cover && <img src={book.cover} alt="" />}
+            <h2>{book.author}</h2>
+            <p>{book.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
