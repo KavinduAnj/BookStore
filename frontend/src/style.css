@@ -30,7 +30,8 @@ img{
     padding: 3px 6px;
     background-color: white;
     cursor: pointer;
-    color: red;
+    border: 1px solid rgb(245, 191, 191);
+    color: rgb(242, 100, 100);
  
 }
 
@@ -39,6 +40,7 @@ img{
     padding: 3px 6px;
     background-color: white;
     cursor: pointer;
-    color: blue;
+    border: 1px solid rgb(204,204,243);
+    color: rgb(139,139,234);
 
 }
